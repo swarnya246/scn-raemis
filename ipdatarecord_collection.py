@@ -58,7 +58,7 @@ def main():
         # Extract last month
         today = datetime.now()
         first_day_current_month = today.replace(day=1)
-        first_day_last_month = (first_day_current_month - timedelta(days=1)).replace(day=1)
+        first_day_last_month = (first_day_current_month - pd.Timedelta(days=1)).replace(day=1)
         df = df.loc[(df['start_time'] >= first_day_last_month.strftime('%Y-%m-%d'))
                     & (df['start_time'] < first_day_current_month.strftime('%Y-%m-%d'))]
         
@@ -68,7 +68,7 @@ def main():
         print("Report generation complete")
         
     except Exception as e:
-        print(f"✗ Error: {e}")
+        print(f"Error: {e}")
         # Optional: Send error notification
 
 if __name__ == '__main__':
