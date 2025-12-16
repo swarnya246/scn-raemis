@@ -7,7 +7,7 @@ import os
 urllib3.disable_warnings()
 
 # Configuration
-OUTPUT_DIR = '/mnt/shared/raemis_reports'
+OUTPUT_DIR = '~/raemis_reports'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def fetch_data():
