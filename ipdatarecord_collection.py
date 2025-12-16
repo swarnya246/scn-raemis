@@ -32,7 +32,7 @@ def save_csv(data, timestamp):
 def generate_charts(df, timestamp):
     """Generate visualizations"""
     plt.figure(figsize=(10, 6))
-    plt.scatter(df_school_weekends['start_time'], df_school_weekends['tx_and_rx_mb'], alpha=0.5, s=6)
+    plt.scatter(df['start_time'], df['tx_and_rx_mb'], alpha=0.5, s=6)
     plt.xlabel('Start Time')
     plt.ylabel('Transmitted and Recieved Megabytes')
     plt.title(f'Monthly Summary: {timestamp}')
