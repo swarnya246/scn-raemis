@@ -32,7 +32,7 @@ def save_csv(data, timestamp):
 def save_charts(df, plot_title, file_title, timestamp):
     """Save specific charts"""
     plt.figure(figsize=(10, 6))
-    plt.plot(df['hour'], df['mean'])
+    plt.bar(df['hour'], df['mean'])
     plt.xlabel('Start Time')
     plt.ylabel('Transmitted and Recieved Megabytes')
     plt.title(f'Average Usage by Hour of {plot_title}')
@@ -41,7 +41,7 @@ def save_charts(df, plot_title, file_title, timestamp):
     plt.tight_layout()
     plt.savefig(f'{OUTPUT_DIR}/tx_rx_cumulative_avg_{file_title}_{timestamp}.png', dpi=300)
     plt.close()
-    
+
     plt.figure(figsize=(10, 6))
     plt.bar(df['hour'], df['sum'])
     plt.xlabel('Start Time')
